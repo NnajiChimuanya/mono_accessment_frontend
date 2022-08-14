@@ -29,7 +29,7 @@ const Login = () => {
               <Button className="button"> GET STARTED</Button>
             </div>
           </form>
-          <div className="already-container">
+          <div className="dont-container">
             <p>
               Don't have an account? <Link to="/signup"> Sign up</Link>
             </p>
