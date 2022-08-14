@@ -1,6 +1,7 @@
 import React from "react";
 import "./signup.css";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -41,6 +42,16 @@ const Signup = () => {
               />
             </div>
           </form>
+        </div>
+        <div className="button-container">
+          <Button className="button"> GET STARTED</Button>
+        </div>
+
+        <div className="already-container">
+          <p>
+            {" "}
+            Already have an account? <Link to="/login"> Sign In</Link>
+          </p>
         </div>
       </div>
     </div>

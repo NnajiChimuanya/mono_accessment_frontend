@@ -7,7 +7,7 @@
 }
 
 .signup-main {
-    height: 50vh;
+    height: 60vh;
     width: 40vw;
     background-color: #ffffff;
     border-radius: 10px;
@@ -17,6 +17,7 @@
     max-width: 150px;
     margin-right: auto;
     margin-left: auto;
+    margin-top: -15px;
 }
 
 .logo {
@@ -55,13 +56,17 @@ form > div {
     justify-content: space-between;
 }
 
-
+::placeholder {
+    font-size: 10px;
+}
 
 .first-name {
     width: 135px;
     padding: 5px 4px;
     outline-width: 0px;
     border: 1px solid rgb(184, 181, 181);
+    border-radius: 5px;
+    height: 20px;
 }
 
 .last-name {
@@ -69,6 +74,9 @@ form > div {
     padding: 5px 4px;
     outline-width: 0px;
     border: 1px solid rgb(184, 181, 181);
+    border-radius: 5px;
+    height: 20px;
+    
 }
 
 .form-email > input{
@@ -76,6 +84,9 @@ form > div {
     padding: 5px 0px 5px 5px;
     outline-width: 0px;
     border: 1px solid rgb(184, 181, 181);
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 5px;
 }
 
 .form-password > input{
@@ -83,6 +94,37 @@ form > div {
     padding: 5px 2px;
     outline-width: 0px;
     border: 1px solid rgb(184, 181, 181);
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 5px;
+}
+
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.button{
+    background: #182cd1 !important;
+    width : 290px !important;
+    color: white !important;
+    text-transform: inherit !important;
+    font-size: 10px !important;
+    padding: 8px 0px !important;
+}
+
+.already-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.already-container > p {
+    font-size: 10px;
 }
 
 
@@ -95,7 +137,11 @@ form > div {
 
 @media screen and (max-width : 650px){
     .signup-main {
-        width: 70vw;
+        width: 75vw;
+    }
+
+    .main-logo {
+        margin-top: 0px;
     }
 
     form {
@@ -111,6 +157,7 @@ form > div {
         padding: 5px 4px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 15px;
     }
     
     .last-name {
@@ -118,6 +165,7 @@ form > div {
         padding: 5px 4px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 15px;
     }
     
     .form-email > input{
@@ -125,6 +173,7 @@ form > div {
         padding: 5px 0px 5px 5px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 15px;
     }
     
     .form-password > input{
@@ -132,13 +181,17 @@ form > div {
         padding: 5px 2px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 15px;
     }
 
-  
+    .button{
+        background: #182cd1 !important;
+        width : 250px !important;
+    }
    
 }
 
-@media screen and (max-width : 380px){
+@media screen and (max-width : 390px){
     .signup-main {
         width: 70vw;
     }
@@ -150,33 +203,43 @@ form > div {
     .form-name {
         display: grid;
         row-gap: 10px;
+       
     }
     .first-name {
-        width: 200px;
+        width: 220px;
         padding: 5px 4px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 5px;
     }
     
     .last-name {
-        width: 200px;
+        width: 220px;
         padding: 5px 4px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 5px;
     }
     
     .form-email > input{
-        width: 200px;
+        width: 220px;
         padding: 5px 0px 5px 5px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 5px;
     }
     
     .form-password > input{
-        width: 200px;
+        width: 220px;
         padding: 5px 2px;
         outline-width: 0px;
         border: 1px solid rgb(184, 181, 181);
+        margin-left: 5px;
+    }
+
+    .button{
+       width : 200px !important;
+       margin-left: -25px !important;
     }
 
   
