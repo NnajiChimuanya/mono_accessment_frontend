@@ -2,25 +2,19 @@ import logo from "./logo.svg";
 import "./App.css";
 import { IconButton, Avatar, Icon } from "@mui/material";
 import MoodIcon from "@mui/icons-material/Mood";
+import { Routes, Route } from "react-router-dom";
+import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Signup from "./pages/signup/Signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Avatar />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
     </div>
   );
 }

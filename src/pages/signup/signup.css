@@ -1,0 +1,184 @@
+.signup {
+    height: 100vh;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #101010;
+}
+
+.signup-main {
+    height: 50vh;
+    width: 40vw;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.main-logo {
+    max-width: 150px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
+}
+
+.main-paragraph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -30px;
+}
+
+.main-paragraph > p {
+    font-size: 10px;
+}
+
+.form-container {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+
+
+form > div {
+    margin-top: 10px;
+}
+
+.form-name {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+
+.first-name {
+    width: 135px;
+    padding: 5px 4px;
+    outline-width: 0px;
+    border: 1px solid rgb(184, 181, 181);
+}
+
+.last-name {
+    width: 135px;
+    padding: 5px 4px;
+    outline-width: 0px;
+    border: 1px solid rgb(184, 181, 181);
+}
+
+.form-email > input{
+    width: 290px;
+    padding: 5px 0px 5px 5px;
+    outline-width: 0px;
+    border: 1px solid rgb(184, 181, 181);
+}
+
+.form-password > input{
+    width: 290px;
+    padding: 5px 2px;
+    outline-width: 0px;
+    border: 1px solid rgb(184, 181, 181);
+}
+
+
+@media screen and (max-width : 850px){
+    .signup-main {
+        width: 70vw;
+    }
+}
+
+
+@media screen and (max-width : 650px){
+    .signup-main {
+        width: 70vw;
+    }
+
+    form {
+        padding: 0px 5px;
+    }
+
+    .form-name {
+        display: grid;
+        row-gap: 10px;
+    }
+    .first-name {
+        width: 250px;
+        padding: 5px 4px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .last-name {
+        width: 250px;
+        padding: 5px 4px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .form-email > input{
+        width: 250px;
+        padding: 5px 0px 5px 5px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .form-password > input{
+        width: 250px;
+        padding: 5px 2px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+
+  
+   
+}
+
+@media screen and (max-width : 380px){
+    .signup-main {
+        width: 70vw;
+    }
+
+    form {
+        padding: 0px 5px;
+    }
+
+    .form-name {
+        display: grid;
+        row-gap: 10px;
+    }
+    .first-name {
+        width: 200px;
+        padding: 5px 4px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .last-name {
+        width: 200px;
+        padding: 5px 4px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .form-email > input{
+        width: 200px;
+        padding: 5px 0px 5px 5px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+    
+    .form-password > input{
+        width: 200px;
+        padding: 5px 2px;
+        outline-width: 0px;
+        border: 1px solid rgb(184, 181, 181);
+    }
+
+  
+   
+}
