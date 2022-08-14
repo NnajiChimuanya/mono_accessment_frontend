@@ -25,8 +25,29 @@ const Login = () => {
                 placeholder="Password"
               />
             </div>
+            <div className="options">
+              <div className="options-main">
+                <div className="check-box">
+                  <input type={"checkbox"} name="remember-me" />
+                  <label htmlFor="remember-me"> Remember me</label>
+                </div>
+                <div className="forgot">
+                  <Link className="forgot-password" to={"/forgotPassword"}>
+                    {" "}
+                    I Forgot my password
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <div className="button-container">
-              <Button className="button"> GET STARTED</Button>
+              <Button
+                onClick={() => console.log("mmmm")}
+                className="button-login"
+              >
+                {" "}
+                GET STARTED
+              </Button>
             </div>
           </form>
           <div className="dont-container">

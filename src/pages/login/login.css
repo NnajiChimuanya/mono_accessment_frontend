@@ -104,19 +104,68 @@ form > div {
 }
 
 
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.check-box {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.check-box > label {
+    font-size: 10px;
+}
+
+.forgot {
+    font-size: 10px;
+    margin-left: 40px;
+}
 
 
 
+.button-login{
+    background: #6979f8 !important;
+    width : 290px !important;
+    color: white !important;
+    text-transform: inherit !important;
+    font-size: 10px !important;
+    padding: 8px 0px !important;
+}
 
-
-
-
+.forgot-password {
+    text-decoration: none;
+    color: black;    
+}
 
 
 
 @media screen and (max-width : 850px){
     .login-main {
         width: 70vw;
+    }
+}
+
+@media screen and (max-width : 400px) {
+
+    .check-box {
+       
+        margin-right: 30px;
+    }
+
+
+    .forgot {
+        
+        margin-left: 0px;
     }
 }
 

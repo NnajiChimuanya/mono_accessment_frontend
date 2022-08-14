@@ -184,8 +184,8 @@ form > div {
         margin-left: 15px;
     }
 
-    .button{
-        background: #182cd1 !important;
+    .button, .button-login{
+       
         width : 250px !important;
     }
    
@@ -237,7 +237,7 @@ form > div {
         margin-left: 5px;
     }
 
-    .button{
+    .button, .button-login{
        width : 200px !important;
        margin-left: -25px !important;
     }
