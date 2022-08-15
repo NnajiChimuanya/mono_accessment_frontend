@@ -1,0 +1,23 @@
+.sidebar {
+    flex: 0.2;
+    background-color: black;
+}
+
+.sidebar-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-logo {
+    height: 80px;
+    object-fit: contain;
+}
+
+
+
+/* @media screen and (max-width : 850px) {
+    .sidebar {
+        display: none;
+    }
+} */
