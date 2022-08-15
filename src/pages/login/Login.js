@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    let data = {
+      email,
+      password,
+    };
+
+    setEmail("");
+    setPassword("");
+    console.log(data);
+  };
+
   return (
     <div className="login">
       <div className="login-main">
@@ -16,10 +32,18 @@ const Login = () => {
         <div className="form-container">
           <form>
             <div className="form-email">
-              <input className="email" name="email" placeholder="Email" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="email"
+                name="email"
+                placeholder="Email"
+              />
             </div>
             <div className="form-password">
               <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="password"
                 name="password"
                 placeholder="Password"
@@ -41,10 +65,7 @@ const Login = () => {
             </div>
 
             <div className="button-container">
-              <Button
-                onClick={() => console.log("mmmm")}
-                className="button-login"
-              >
+              <Button onClick={handleLogin} className="button-login">
                 {" "}
                 GET STARTED
               </Button>

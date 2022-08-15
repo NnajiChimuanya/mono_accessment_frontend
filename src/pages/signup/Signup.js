@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+
+    let data = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
+
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+
+    console.log(data);
+  };
+
   return (
     <div className="signup">
       <div className="signup-main">
@@ -18,6 +41,8 @@ const Signup = () => {
             <div className="form-name">
               <div>
                 <input
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
                   className="first-name"
                   name="firstName"
                   placeholder="First Name"
@@ -25,6 +50,8 @@ const Signup = () => {
               </div>
               <div>
                 <input
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                   className="last-name"
                   name="lastName"
                   placeholder="Last Name"
@@ -32,10 +59,18 @@ const Signup = () => {
               </div>
             </div>
             <div className="form-email">
-              <input className="email" name="email" placeholder="Email" />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="email"
+                name="email"
+                placeholder="Email"
+              />
             </div>
             <div className="form-password">
               <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="password"
                 name="password"
                 placeholder="Password"
@@ -44,7 +79,10 @@ const Signup = () => {
           </form>
         </div>
         <div className="button-container">
-          <Button className="button"> GET STARTED</Button>
+          <Button onClick={handleSignup} className="button">
+            {" "}
+            GET STARTED
+          </Button>
         </div>
 
         <div className="already-container">
