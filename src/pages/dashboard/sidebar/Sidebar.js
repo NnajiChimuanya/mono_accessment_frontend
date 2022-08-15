@@ -1,47 +1,9 @@
 import React from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
-import Dashboard from "../Dashboard";
-import Expenses from "../../expenses/Expenses";
-import Wallets from "../../expenses/Expenses";
-import Summary from "../../summary/Summary";
-import Accounts from "../../Accounts/Accounts";
-import Settings from "../../settings/Settings";
+import sidebarContent from "./sidebarData";
 
 const Sidebar = () => {
-  const sidebarContent = [
-    {
-      name: "Dashboard",
-      path: "/",
-      page: Dashboard,
-    },
-    {
-      name: "Expenses",
-      path: "/expenses",
-      page: Expenses,
-    },
-    {
-      name: "Wallet",
-      path: "/wallets",
-      page: Wallets,
-    },
-    {
-      name: "Summary",
-      path: "/summary",
-      page: Summary,
-    },
-    {
-      name: "Accounts",
-      path: "/accounts",
-      page: Accounts,
-    },
-    {
-      name: "Settings",
-      path: "/settings",
-      page: Settings,
-    },
-  ];
-
   return (
     <div className="sidebar">
       <div className="sidebar-div">
@@ -54,7 +16,11 @@ const Sidebar = () => {
         </div>
         <div className="sidebar-content">
           {sidebarContent?.map((item) => {
-            return <div className="sidebar-content-item"> {item.name}</div>;
+            return (
+              <div className="sidebar-content-item">
+                <Link to={<item.path />}> {item.name}</Link>
+              </div>
+            );
           })}
         </div>
       </div>
