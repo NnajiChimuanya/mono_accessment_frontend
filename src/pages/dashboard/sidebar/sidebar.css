@@ -1,9 +1,10 @@
 .sidebar {
     flex: 0.2;
     background-color: black;
+    height: 100vh;
 }
 
-.sidebar-div {
+.logo-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,6 +13,10 @@
 .sidebar-logo {
     height: 80px;
     object-fit: contain;
+}
+
+.sidebar-content-item {
+    color: white;
 }
 
 
