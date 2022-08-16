@@ -3,6 +3,107 @@
     display: flex;
 }
 
-.others {
-    flex: 0.7;
+.dashboard-main {
+    flex: 0.82;
+    display: flex;
+   
 }
+
+.dashboard-main-expense {
+    flex: 0.6;
+    padding: 20px 30px;
+}
+
+
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    
+}
+
+.user > p {
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 5px;
+}
+
+
+
+
+.day {
+    display: flex;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid rgb(250, 246, 246);
+    font-family: 'Noto Sans', sans-serif;
+    height: 30px;
+    width: 76px;
+    border-radius: 5px;
+}
+
+.day > p {
+    
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    margin-left: 5px;
+    
+}
+
+.day >.MuiSvgIcon-root {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+.chart {
+    margin-top: 20px;
+    
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.barchat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.transactions {
+    margin-top: 35px;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transactions-header > div  > .MuiSvgIcon-root {
+    color: grey !important;
+}
+
+
+
+
+
+
+
+
+
+
+.dashboard-main-balance {
+    flex: 0.4;
+    background-color: #fcfcfc;
+}
+

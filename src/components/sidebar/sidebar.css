@@ -1,5 +1,5 @@
 .sidebar {
-    flex: 0.2;
+    flex: 0.18;
     background-color: black;
     height: 100vh;
 }
@@ -15,8 +15,17 @@
     object-fit: contain;
 }
 
+
+
 .sidebar-content-item {
     color: white;
+    padding:  20px 70px;
+
+}
+
+.link {
+    text-decoration: none;
+    color: grey;
 }
 
 
