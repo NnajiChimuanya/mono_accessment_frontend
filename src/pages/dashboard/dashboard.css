@@ -1,20 +1,41 @@
 .dashboard {
     height: 100vh;
     display: flex;
+    overflow-y: scroll;
+}
+
+.dashboard::-webkit-scrollbar {
+    display: none;
 }
 
 .dashboard-main {
     flex: 0.82;
     display: flex;
-   
+    height: 100vh;
+    display: flex;
+    overflow-y: scroll;
 }
+
+.dashboard-main::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dashboard expense */
 
 .dashboard-main-expense {
     flex: 0.6;
     padding: 20px 30px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.dashboard-main-expense::-webkit-scrollbar {
+    display: none;
 }
 
 
+
+/* Header */
 .expense-header {
     display: flex;
     justify-content: space-between;
@@ -59,6 +80,10 @@
     font-size: 15px;
 }
 
+
+
+/* Barchat section */
+
 .chart {
     margin-top: 20px;
     
@@ -95,7 +120,49 @@
 
 
 
+/* Transaction List */
 
+.transaction-list {
+    margin-top: 10px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.item-info {
+    display:  flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.item-info-text {
+    margin-left: 10px;
+}
+
+.item-info-text > .title {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.item-info-text > .time {
+    font-family:  sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    color: grey;
+}
+
+.amount > p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.item-info > .MuiSvgIcon-root {
+    color: blue !important;
+    margin-left: -10px !important;
+}
 
 
 
@@ -105,5 +172,74 @@
 .dashboard-main-balance {
     flex: 0.4;
     background-color: #fcfcfc;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 20px 30px
 }
 
+.dashboard-main-balance::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.total-balance-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-balance {
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+}
+
+.total-balance-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.total-balance-title > p {
+    font-family: 'Lalezar', cursive;
+}
+
+.total-amount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+.total-amount > p {
+    font-family: 'Lalezar', cursive;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.total-amount-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5px;
+}
+
+.total-amount-text > p {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: grey;
+}
+
+
+.banks-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    /* width: 100px;
+    height: 35px; */
+}
