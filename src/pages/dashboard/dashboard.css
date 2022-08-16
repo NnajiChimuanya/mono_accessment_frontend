@@ -2,3 +2,7 @@
     height: 100vh;
     display: flex;
 }
+
+.others {
+    flex: 0.7;
+}

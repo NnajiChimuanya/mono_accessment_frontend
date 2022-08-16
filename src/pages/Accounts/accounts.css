@@ -1,0 +1,7 @@
+.accounts {
+    display: flex;
+}
+
+.accounts-main {
+    flex: 0.8;
+}

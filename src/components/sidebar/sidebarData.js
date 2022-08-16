@@ -1,16 +1,11 @@
-import Dashboard from "../Dashboard";
-import Expenses from "../../expenses/Expenses";
-import Wallets from "../../expenses/Expenses";
-import Summary from "../../summary/Summary";
-import Accounts from "../../Accounts/Accounts";
-import Settings from "../../settings/Settings";
+import Dashboard from "../../pages/dashboard/Dashboard";
+import Expenses from "../../pages/expenses/Expenses";
+import Wallets from "../../pages/wallets/Wallets";
+import Summary from "../../pages/summary/Summary";
+import Accounts from "../../pages/Accounts/Accounts";
+import Settings from "../../pages/settings/Settings";
 
 const sidebarContent = [
-  {
-    name: "Dashboard",
-    path: "/",
-    page: Dashboard,
-  },
   {
     name: "Expenses",
     path: "/expenses",

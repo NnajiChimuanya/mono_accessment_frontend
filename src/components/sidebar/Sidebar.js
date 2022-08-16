@@ -15,10 +15,11 @@ const Sidebar = () => {
           />
         </div>
         <div className="sidebar-content">
-          {sidebarContent?.map((item) => {
+          <Link to={"/"}> Dashboard</Link>
+          {sidebarContent?.map((item, id) => {
             return (
-              <div className="sidebar-content-item">
-                <Link to={<item.path />}> {item.name}</Link>
+              <div key={id} className="sidebar-content-item">
+                <Link to={item.path}> {item.name}</Link>
               </div>
             );
           })}

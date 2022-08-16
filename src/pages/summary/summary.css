@@ -1,0 +1,7 @@
+.summary {
+    display: flex;
+}
+
+.summary-main {
+    flex: 0.8;
+}

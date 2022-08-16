@@ -1,0 +1,7 @@
+.wallets {
+    display: flex;
+}
+
+.wallets-main {
+    flex: 0.8;
+}

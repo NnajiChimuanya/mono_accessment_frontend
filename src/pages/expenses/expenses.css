@@ -1,0 +1,7 @@
+.expenses {
+    display: flex;
+}
+
+.expenses-main {
+    flex: 0.8;
+}
