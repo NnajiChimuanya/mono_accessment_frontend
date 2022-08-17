@@ -1,0 +1,142 @@
+.dashboard-main-expense {
+    flex: 0.7;
+    padding: 20px 30px;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.dashboard-main-expense::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+/* Header */
+.expense-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    
+}
+
+.user > p {
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 5px;
+}
+
+
+
+
+.day {
+    display: flex;
+    align-items: center;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid rgb(250, 246, 246);
+    font-family: 'Noto Sans', sans-serif;
+    height: 30px;
+    width: 76px;
+    border-radius: 5px;
+}
+
+.day > p {
+    
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    margin-left: 5px;
+    
+}
+
+.day >.MuiSvgIcon-root {
+    margin-left: 5px;
+    font-size: 15px;
+}
+
+
+
+/* Barchat section */
+
+.chart {
+    margin-top: 20px;
+    
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.barchat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+.transactions {
+    margin-top: 35px;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transactions-header > div  > .MuiSvgIcon-root {
+    color: grey !important;
+}
+
+
+
+/* Transaction List */
+
+.transaction-list {
+    margin-top: 10px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.item-info {
+    display:  flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.item-info-text {
+    margin-left: 10px;
+}
+
+.item-info-text > .title {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.item-info-text > .time {
+    font-family:  sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    color: grey;
+}
+
+.amount > p {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+}
+
+.item-info > .MuiSvgIcon-root {
+    color: blue !important;
+    margin-left: -10px !important;
+}
+
