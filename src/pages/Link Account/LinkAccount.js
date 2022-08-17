@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Skeleton from "@mui/material/Skeleton";
 import "./linkAccount.css";
 import { Button } from "@mui/material";
+import MonoConnect from "@mono.co/connect.js";
+import axios from "axios";
 
-const linkAccount = () => {
+function LinkAccount() {
   let linkAccount = true;
+
+  const monoConnect = React.useMemo(() => {
+    const monoInstance = new MonoConnect({
+      onClose: () => console.log("Widget closed"),
+      onLoad: () => console.log("Widget loaded successfully"),
+      onSuccess: ({ code }) => {
+        axios
+          .post(`http://localhost:3001/code/${code}`)
+          .then((data) => console.log(data));
+      },
+      key: "test_pk_kefmCmFpjPyf8tbr7Opu",
+    });
+
+    monoInstance.setup();
+
+    return monoInstance;
+  }, []);
+
   return (
     <div className="linkAccount">
       <Sidebar linkAccount={linkAccount} />
@@ -43,13 +63,19 @@ const linkAccount = () => {
 
           <div className="link-button-container">
             <div className="link-button">
-              <Button className="link-account-button"> Link now</Button>
+              <Button
+                onClick={() => monoConnect.open()}
+                className="link-account-button"
+              >
+                {" "}
+                Link now
+              </Button>
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default linkAccount;
+export default LinkAccount;
