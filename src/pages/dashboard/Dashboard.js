@@ -1,9 +1,14 @@
 import React from "react";
 import "./dashboard.css";
 import Sidebar from "../../components/sidebar/Sidebar";
-import { Avatar, IconButton } from "@mui/material";
+import { Avatar, IconButton, Button } from "@mui/material";
 import AvatarGroup from "@mui/material/AvatarGroup";
-import { CreditCard, MoreHoriz, PlayCircleFilled } from "@mui/icons-material";
+import {
+  CreditCard,
+  MoreHoriz,
+  PlayCircleFilled,
+  Add,
+} from "@mui/icons-material";
 import {
   BarChart,
   Bar,
@@ -247,21 +252,35 @@ const Dashboard = () => {
                 <p id="text"> Your balance across all Banks</p>
               </div>
               <div className="banks-container">
-                <AvatarGroup total={24}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <AvatarGroup className="avatar-group">
                   <Avatar
-                    alt="Travis Howard"
-                    src="/static/images/avatar/2.jpg"
+                    className="bank"
+                    alt="Guaranty Trust Bank"
+                    src="https://nairametrics.com/wp-content/uploads/2015/05/Guaranty_Trust_Bank.jpg"
                   />
                   <Avatar
-                    alt="Agnes Walker"
-                    src="/static/images/avatar/4.jpg"
+                    className="bank"
+                    alt="First Bank"
+                    src="https://upload.wikimedia.org/wikipedia/en/6/62/First_Bank_of_Nigeria_logo.png"
                   />
                   <Avatar
-                    alt="Trevor Henderson"
-                    src="/static/images/avatar/5.jpg"
+                    className="bank"
+                    alt="Access Bank"
+                    src="https://pbs.twimg.com/profile_images/1112702246326845445/a-CBpIyN_400x400.png"
+                  />
+                  <Avatar
+                    className="bank"
+                    alt="Zenith Bank"
+                    src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Zenith_Bank_logo.svg/1200px-Zenith_Bank_logo.svg.png"
                   />
                 </AvatarGroup>
+                <div className="add">
+                  <Add />
+                </div>
+              </div>
+
+              <div className="unlink-button-container">
+                <Button className="unlink-button"> Unlink BANK Account </Button>
               </div>
             </div>
           </div>
