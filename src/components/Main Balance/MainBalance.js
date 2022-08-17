@@ -93,6 +93,36 @@ const MainBalance = () => {
               <BorderLinearProgress variant="determinate" value={50} />
             </div>
           </div>
+
+          <div className="details-item">
+            <div className="details-item-info">
+              <div className="details-item-info-name"> Food and Drinks</div>
+              <div className="details-item-info-amount"> 872,400</div>
+            </div>
+            <div className="details-item-progressbar">
+              <BorderLinearProgress variant="determinate" value={50} />
+            </div>
+          </div>
+
+          <div className="details-item">
+            <div className="details-item-info">
+              <div className="details-item-info-name"> Food and Drinks</div>
+              <div className="details-item-info-amount"> 872,400</div>
+            </div>
+            <div className="details-item-progressbar">
+              <BorderLinearProgress variant="determinate" value={50} />
+            </div>
+          </div>
+
+          <div className="details-item">
+            <div className="details-item-info">
+              <div className="details-item-info-name"> Food and Drinks</div>
+              <div className="details-item-info-amount"> 872,400</div>
+            </div>
+            <div className="details-item-progressbar">
+              <BorderLinearProgress variant="determinate" value={50} />
+            </div>
+          </div>
         </div>
       </div>
     </div>
