@@ -1,9 +1,10 @@
 import React from "react";
 import "./sidebar.css";
 import { Link } from "react-router-dom";
-import sidebarContent from "./sidebarData";
+import Box from "@mui/material/Box";
+import Skeleton from "@mui/material/Skeleton";
 
-const Sidebar = () => {
+const Sidebar = ({ sidebarContent, linkAccount }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-div">
@@ -52,12 +53,13 @@ const Sidebar = () => {
           </svg>
         </div>
         <div className="sidebar-content">
-          <div className="sidebar-content-item">
-            <Link className="link" to={"/"}>
-              {" "}
-              Dashboard
-            </Link>
-          </div>
+          {sidebarContent && (
+            <div className="sidebar-content-item">
+              <Link className="link" to={"/"}>
+                Dashboard
+              </Link>
+            </div>
+          )}
 
           {sidebarContent?.map((item, id) => {
             return (
@@ -69,6 +71,42 @@ const Sidebar = () => {
               </div>
             );
           })}
+
+          {linkAccount && (
+            <div className="skeletons">
+              <div className=" skeleton skeleton-first">
+                <Skeleton
+                  height={10}
+                  sx={{ bgcolor: "grey.800" }}
+                  animation="wave"
+                />
+              </div>
+
+              <div className=" skeleton skeleton-second">
+                <Skeleton
+                  height={10}
+                  sx={{ bgcolor: "grey.500" }}
+                  animation="wave"
+                />
+              </div>
+
+              <div className=" skeleton skeleton-third">
+                <Skeleton
+                  height={10}
+                  sx={{ bgcolor: "grey.300" }}
+                  animation="wave"
+                />
+              </div>
+
+              <div className=" skeletonskeleton-fourth">
+                <Skeleton
+                  height={10}
+                  sx={{ bgcolor: "#5D66B0" }}
+                  animation="wave"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
