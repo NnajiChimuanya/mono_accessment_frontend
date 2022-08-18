@@ -6,21 +6,15 @@
 
 #
 
-#
-
 ## Requirements
 
 Nodejs Version 10 or higher
 
 #
 
-#
-
 ## Installation
 
 ### `npm install`
-
-#
 
 #
 
