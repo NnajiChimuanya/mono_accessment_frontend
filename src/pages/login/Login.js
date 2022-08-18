@@ -31,7 +31,6 @@ const Login = () => {
 
     setEmail("");
     setPassword("");
-    console.log(data);
   };
 
   return (
