@@ -1,11 +1,13 @@
 import "./expenseTracker.css";
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   CreditCard,
   MoreHoriz,
   PlayCircleFilled,
   Add,
+  Key,
+  DensityMedium,
 } from "@mui/icons-material";
 import {
   BarChart,
@@ -18,16 +20,31 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import data from "../../pages/dashboard/barchatData";
+import { barchatData } from "../../pages/dashboard/barchatData";
+import AuthContext from "../../AuthProvider";
 
 const ExpenseTracker = () => {
+  const { auth, setAuth } = useContext(AuthContext);
+  let { data, transactions, showSidebar } = auth;
+  const [show, setShow] = useState(showSidebar);
+
   return (
     <div className="dashboard-main-expense">
       <div className="expense-header">
         <div className="user">
-          <Avatar src="https://i0.wp.com/businessday.ng/wp-content/uploads/2021/10/Abdul-Hassan.png?fit=700%2C400&ssl=1" />
+          <DensityMedium
+            onClick={() => {
+              setShow(!show);
+              setAuth({ ...auth, showSidebar: show });
+            }}
+            className="expense-header-density"
+          />
+          <Avatar
+            className="user-avatar"
+            src="https://st2.depositphotos.com/3310833/7828/v/380/depositphotos_78289624-stock-illustration-flat-hipster-character.jpg?forcejpeg=true"
+          />
           <p>
-            Good morning, <span>Ola</span>
+            Good morning, <span>{data.account.name}</span>
           </p>
         </div>
         <div className="day">
@@ -41,13 +58,7 @@ const ExpenseTracker = () => {
         <div className="chart-title">Expense Tracker</div>
         <div className="barchat">
           <div className="barchat-container">
-            <BarChart
-              defaultShowTooltip
-              barGap={5}
-              width={450}
-              height={120}
-              data={data}
-            >
+            <BarChart barGap={5} width={450} height={120} data={barchatData}>
               <Bar barSize={15} dataKey="uv" fill="#dbeff0" />
             </BarChart>
           </div>
@@ -63,171 +74,43 @@ const ExpenseTracker = () => {
         </div>
         <hr />
         <div className="transaction-list">
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
+          {transactions.data?.map((item, id) => {
+            let { type, narration, amount, date } = item;
+            return (
+              <div key={id} className="list-item">
+                <div className="item-info">
+                  <div className="item-type-container">
+                    {type === "credit" ? (
+                      <img
+                        className="item-type-img"
+                        src="https://banner2.cleanpng.com/20180630/lwy/kisspng-credit-card-bank-credit-limit-debit-card-5b37b62eb0dd78.3158197915303777747245.jpg"
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        className="item-type-img"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxCXtKzkntwW4dytiiHD6RftTLPuQjq-OeZG0n_H49q--BI3kxb45qo30IQs83peSeUM0&usqp=CAU"
+                        alt=""
+                      />
+                    )}
+                  </div>
+                  <div className="item-info-text">
+                    <p className="title"> {narration}</p>
+                    <p className="time">
+                      {" "}
+                      {new Date(date).toUTCString()} . <span> {type}</span>
+                    </p>
+                  </div>
+                </div>
+                <div className="amount">
+                  <p>
+                    {type === "debit" ? <span>-</span> : <span>+</span>}{" "}
+                    {amount}
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
-          <div className="list-item">
-            <div className="item-info">
-              <PlayCircleFilled />
-              <div className="item-info-text">
-                <p className="title"> Netflix subscription</p>
-                <p className="time">
-                  {" "}
-                  07/08/22 . 08 : 22pm . <span> Credit </span>
-                </p>
-              </div>
-            </div>
-            <div className="amount">
-              <p> -10800 </p>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </div>

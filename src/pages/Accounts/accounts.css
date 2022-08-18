@@ -1,5 +1,19 @@
 .accounts {
     display: flex;
+   
+}
+
+
+.accounts-main > .transactions-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accounts-main > .transactions-header > .transactions-header-title {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .accounts-main {

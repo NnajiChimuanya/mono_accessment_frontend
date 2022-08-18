@@ -1,4 +1,4 @@
-const data = [
+export const barchatData = [
   {
     name: "Page A",
     uv: 4000,
@@ -138,5 +138,3 @@ const data = [
     amt: 2500,
   },
 ];
-
-export default data;

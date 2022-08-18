@@ -27,3 +27,15 @@
 
 /* Main Balance */
 
+
+
+@media screen and (max-width : 650px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    .dashboard-main {
+        display: grid;
+    }
+}
+ 
