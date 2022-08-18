@@ -15,6 +15,7 @@
 .expense-header {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .user {
@@ -23,9 +24,18 @@
     
 }
 
+.user-avatar {
+    margin-left: 5px;
+}
+
 .user > p {
     font-family: 'Noto Sans', sans-serif;
     margin-left: 5px;
+}
+
+.expense-header-density {
+    color: grey !important;
+    cursor: pointer !important;
 }
 
 
@@ -88,6 +98,7 @@
 .transactions-header {
     display: flex;
     justify-content: space-between;
+   
 }
 
 .transactions-header > div  > .MuiSvgIcon-root {
@@ -100,6 +111,7 @@
 
 .transaction-list {
     margin-top: 10px;
+   
 }
 
 .list-item {
@@ -120,6 +132,7 @@
 
 .item-info-text > .title {
     font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -133,6 +146,7 @@
 .amount > p {
     font-family: 'Noto Sans', sans-serif;
     font-weight: 600;
+    font-size: 12px;
 }
 
 .item-info > .MuiSvgIcon-root {
@@ -140,3 +154,8 @@
     margin-left: -10px !important;
 }
 
+.item-type-img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}

@@ -22,13 +22,13 @@ const sidebarContent = [
     page: Summary,
   },
   {
-    name: "Accounts",
+    name: "Shareholders",
     path: "/accounts",
     page: Accounts,
   },
   {
-    name: "Settings",
-    path: "/settings",
+    name: "Logout",
+    path: "/logout",
     page: Settings,
   },
 ];

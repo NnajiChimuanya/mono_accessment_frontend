@@ -1,5 +1,5 @@
 import "./mainBalance.css";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import { Avatar, Button } from "@mui/material";
 import {
@@ -12,8 +12,28 @@ import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
+import AuthContext from "../../AuthProvider";
+import instance from "../../axios";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MainBalance = () => {
+  const { auth, setAuth } = useContext(AuthContext);
+
+  let { data } = auth;
+  const navigate = useNavigate();
+
+  const handleUnlink = async () => {
+    instance
+      .post(`/code/unlink/${data.account._id}`)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+    setAuth({ ...auth, data: null, transactions: null });
+    navigate("/linkAccount");
+  };
+
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
     height: 8,
     borderRadius: 5,
@@ -34,7 +54,7 @@ const MainBalance = () => {
             <p>TOTAL BALANCE</p>
           </div>
           <div className="total-amount">
-            <p>30,000,000</p>
+            <p>{data.account.balance}</p>
           </div>
           <div className="total-amount-text">
             <p id="text"> Your balance across all Banks</p>
@@ -68,7 +88,10 @@ const MainBalance = () => {
           </div>
 
           <div className="unlink-button-container">
-            <Button className="unlink-button"> Unlink BANK Account </Button>
+            <Button onClick={handleUnlink} className="unlink-button">
+              {" "}
+              Unlink BANK Account{" "}
+            </Button>
           </div>
         </div>
       </div>

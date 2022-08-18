@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./signup.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import instance from "../../axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -19,12 +22,19 @@ const Signup = () => {
       password,
     };
 
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
+    instance
+      .post("auth/signup", data)
+      .then((res) => {
+        if (res.data.status === "SUCCESS") {
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setPassword("");
 
-    console.log(data);
+          navigate("/linkAccount");
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   return (

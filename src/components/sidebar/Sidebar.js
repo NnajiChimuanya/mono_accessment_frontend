@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./sidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
+import AuthContext from "../../AuthProvider";
 
 const Sidebar = ({ sidebarContent, linkAccount }) => {
+  const { auth } = useContext(AuthContext);
+  let { showSidebar } = auth;
+
   return (
-    <div className="sidebar">
+    <div
+      className="sidebar"
+      style={{ display: showSidebar ? "block" : "none" }}
+    >
       <div className="sidebar-div">
         <div className="logo-container">
           {/* <img
@@ -55,7 +62,7 @@ const Sidebar = ({ sidebarContent, linkAccount }) => {
         <div className="sidebar-content">
           {sidebarContent && (
             <div className="sidebar-content-item">
-              <Link className="link" to={"/"}>
+              <Link className="link" to={"/dashboard"}>
                 Dashboard
               </Link>
             </div>

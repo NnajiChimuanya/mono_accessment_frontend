@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./login.css";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import instance from "../../axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -14,6 +16,18 @@ const Login = () => {
       email,
       password,
     };
+
+    instance
+      .post("auth/login", data)
+      .then((res) => {
+        if (res.data.status === "SUCCESS") {
+          setEmail("");
+          setPassword("");
+
+          navigate("/dashboard");
+        }
+      })
+      .catch((err) => console.log(err));
 
     setEmail("");
     setPassword("");
