@@ -1,10 +1,8 @@
-# Getting Started with My mon Accessement App
+# Getting Started with My mono Accessement App
 
 ## Live Project
 
 ### https://mono-accessment-frontend.vercel.app
-
-#
 
 #
 
@@ -14,13 +12,9 @@ Nodejs Version 10 or higher
 
 #
 
-#
-
 ## Installation
 
 ### `npm install`
-
-#
 
 #
 
