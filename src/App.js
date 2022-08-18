@@ -19,8 +19,8 @@ function App() {
           path="/dashboard"
           element={auth.data !== null ? <Dashboard /> : <LinkAccount />}
         />
-        <Route exact path="/login" element={<Login />} />
-        <Route path="/" element={<Signup />} />
+        <Route exact path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/linkAccount" element={<LinkAccount />} />
         {sidebarContent.map((item, id) => {
           return (
