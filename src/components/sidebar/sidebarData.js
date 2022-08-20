@@ -22,7 +22,7 @@ const sidebarContent = [
     page: Summary,
   },
   {
-    name: "Shareholders",
+    name: "Accounts",
     path: "/accounts",
     page: Accounts,
   },

@@ -8,42 +8,37 @@ import sidebarContent from "../../components/sidebar/sidebarData";
 const Accounts = () => {
   const { auth } = useContext(AuthContext);
   let { data, transactions } = auth;
+  let { account } = data;
+  let { name, institution, type, balance, currency, accountNumber } = account;
 
-  const [shareholderDetails, setshareholderDetails] = useState();
-
-  useEffect(() => {
-    instance.get(`/code/shareholder`).then((data) => {
-      setshareholderDetails(data.data);
-    });
-  }, []);
   return (
     <div className="accounts">
       <Sidebar sidebarContent={sidebarContent} />
       <div className="accounts-main">
         <div className="transactions-header">
-          <div className="transactions-header-title">
-            Company's shareholders
-          </div>
+          <div className="transactions-header-title">Accounts</div>
         </div>
-        {shareholderDetails?.map((item, id) => {
-          let { firstname, surname, email, nationality } = item;
-          return (
-            <div key={id} className="list-item">
-              <div className="item-info">
-                <div className="item-info-text">
-                  <p className="title">
-                    {" "}
-                    {surname} {firstname}{" "}
-                  </p>
-                  <p className="time">{email}</p>
-                </div>
-              </div>
-              <div className="amount">
-                <p>{nationality}</p>
+
+        <div>
+          <div className="list-item">
+            <div className="item-info">
+              <div className="item-info-text">
+                <p className="title"> {name}</p>
+                <p className="time">
+                  {" "}
+                  {institution.name} . <span> {accountNumber}</span>
+                </p>
+                <p className="time"> {type}</p>
               </div>
             </div>
-          );
-        })}
+            <div className="amount">
+              <p>
+                {" "}
+                <span> {currency} </span> {balance}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

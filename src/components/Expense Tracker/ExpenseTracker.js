@@ -20,13 +20,14 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { barchatData } from "../../pages/dashboard/barchatData";
+
 import AuthContext from "../../AuthProvider";
 
-const ExpenseTracker = () => {
+const ExpenseTracker = ({ barchat }) => {
   const { auth, setAuth } = useContext(AuthContext);
-  let { data, transactions, showSidebar } = auth;
+  let { data, transactions, showSidebar, barchatData } = auth;
   const [show, setShow] = useState(showSidebar);
+  console.log(barchat);
 
   return (
     <div className="dashboard-main-expense">
@@ -58,8 +59,8 @@ const ExpenseTracker = () => {
         <div className="chart-title">Expense Tracker</div>
         <div className="barchat">
           <div className="barchat-container">
-            <BarChart barGap={5} width={450} height={120} data={barchatData}>
-              <Bar barSize={15} dataKey="uv" fill="#dbeff0" />
+            <BarChart width={450} height={120} data={barchat}>
+              <Bar barSize={15} dataKey="amount" fill="#dbeff0" />
             </BarChart>
           </div>
         </div>
