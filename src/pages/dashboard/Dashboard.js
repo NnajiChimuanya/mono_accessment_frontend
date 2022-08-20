@@ -6,19 +6,26 @@ import ExpenseTracker from "../../components/Expense Tracker/ExpenseTracker";
 import MainBalance from "../../components/Main Balance/MainBalance";
 import sidebarContent from "../../components/sidebar/sidebarData";
 import AuthContext from "../../AuthProvider";
-import axios from "axios";
+import instance from "../../axios";
 
 const Dashboard = () => {
   const { auth } = useContext(AuthContext);
+  let { data, barchartData } = auth;
+  let id = data.account._id;
   const [userData, setUserData] = useState({});
+  const [barchat, setBarchat] = useState(null);
 
-  console.log(auth);
+  useEffect(() => {
+    instance.get(`/code/expenses/${id}`).then((data) => {
+      setBarchat(data.data.history);
+    });
+  }, []);
 
   return (
     <div className="dashboard">
       <Sidebar sidebarContent={sidebarContent} />
       <div className="dashboard-main">
-        <ExpenseTracker />
+        <ExpenseTracker barchat={barchat} />
         <MainBalance />
       </div>
     </div>
