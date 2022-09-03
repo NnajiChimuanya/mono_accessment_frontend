@@ -7,6 +7,7 @@ import instance from "../../axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
   const handleLogin = (e) => {
@@ -25,6 +26,10 @@ const Login = () => {
           setPassword("");
 
           navigate("/dashboard");
+        } else {
+          console.log(res.data);
+          setErrorMessage(res.data.error.error);
+          console.log(errorMessage);
         }
       })
       .catch((err) => console.log(err));
@@ -39,6 +44,11 @@ const Login = () => {
         <div className="main-logo">
           <img className="logo" src="logo.png" alt="logo" />
         </div>
+        {errorMessage && (
+          <div className="main-paragraph">
+            <p style={{ color: "red" }}>{errorMessage}</p>
+          </div>
+        )}
         <div className="main-paragraph">
           <p>Securely login to your account</p>
         </div>

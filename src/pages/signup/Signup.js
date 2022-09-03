@@ -10,6 +10,7 @@ const Signup = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
   let navigate = useNavigate();
 
   const handleSignup = (e) => {
@@ -22,6 +23,8 @@ const Signup = () => {
       password,
     };
 
+    setErrorMessage("");
+
     instance
       .post("auth/signup", data)
       .then((res) => {
@@ -32,6 +35,10 @@ const Signup = () => {
           setPassword("");
 
           navigate("/linkAccount");
+        } else {
+          console.log(res.data);
+          setErrorMessage(res.data.errors.error);
+          console.log(errorMessage);
         }
       })
       .catch((err) => console.log(err));
@@ -43,9 +50,15 @@ const Signup = () => {
         <div className="main-logo">
           <img className="logo" src="logo.png" alt="logo" />
         </div>
+        {errorMessage && (
+          <div className="main-paragraph">
+            <p style={{ color: "red" }}>{errorMessage}</p>
+          </div>
+        )}
         <div className="main-paragraph">
           <p>Track all your bank expenses in one place</p>
         </div>
+
         <div className="form-container">
           <form>
             <div className="form-name">
