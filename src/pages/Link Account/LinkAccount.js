@@ -20,6 +20,7 @@ function LinkAccount() {
       onLoad: () => console.log("Widget loaded successfully"),
       onSuccess: ({ code }) => {
         instance.post(`code/${code}`).then(async (res) => {
+          console.log(res.data)
           let userData = res.data;
           let id = res.data.account._id;
 
