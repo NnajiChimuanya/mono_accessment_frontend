@@ -27,9 +27,7 @@ const Login = () => {
 
           navigate("/dashboard");
         } else {
-          console.log(res.data);
           setErrorMessage(res.data.error.error);
-          console.log(errorMessage);
         }
       })
       .catch((err) => console.log(err));

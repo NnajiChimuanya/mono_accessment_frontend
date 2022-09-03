@@ -36,9 +36,7 @@ const Signup = () => {
 
           navigate("/linkAccount");
         } else {
-          console.log(res.data);
           setErrorMessage(res.data.errors.error);
-          console.log(errorMessage);
         }
       })
       .catch((err) => console.log(err));
